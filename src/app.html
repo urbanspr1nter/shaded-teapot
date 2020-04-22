@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Shaded Teapot</title>
+        <link rel="stylesheet" href="app.css" />
+        <script src="gl-matrix-min.js"></script>
+        <script src="logger.js"></script>
+        <script src="gl-compiler.js"></script>
+        <script src="face-iterator.js"></script>
+    </head>
+    <body>
+        <div class="grid">
+            <h2>Teapot</h2>
+            <div class="col-9">
+                <p>
+                    You may use the <strong>Skybox</strong>, or <strong>Teapot</strong> controls to 
+                    control the view of the scene. Choose between 3 options on how to shade the teapot 
+                    with <strong>Phong</strong>, <strong>Reflective</strong>, or <strong>Refraction</strong> shading.
+                </p>
+                <p>
+                    The resolution of the canvas may also be adjusted by modifying the <em>width</em>, and <em>height</em>
+                    values.
+                </p>
+                <p class="warning">
+                    Please wait a few seconds for the images to load. I did not want to compress the images further as I wanted the
+                    highest quality possible being displayed.
+                </p>
+                <p>
+                    <strong>Tip:</strong> Hold down the rotation buttons to rotate smoothly across the scene.
+                </p>
+                <p>
+                    <small>Additional cube map images acquired from <a target="_blank" href="http://www.humus.name">Humus</a></small>
+                </p>
+            </div>
+        </div>
+        <div class="grid">
+            <div class="col-3">
+                <h3>Skybox Controls</h3>
+                <div id="skybox-control-wrapper">
+                    <button id="btn-skybox-rotate-y-neg" type="button">ROT Y-</button>
+                    <button id="btn-skybox-rotate-y-pos" type="button">ROT Y+</button>
+                    <h3>Setting</h3>
+                    <select id="select-skybox">
+                        <option value="London">London</option>
+                        <option value="Sf">San Francisco Beach</option>
+                        <option value="Sweden">Sweden</option>
+                    </select>
+                </div>
+            </div>
+            <div class="col-6">
+                <h3>Teapot Controls</h3>
+                <div id="control-wrapper">
+                    <button id="btn-rotate-x" type="button">ROT X</button>
+                    <button id="btn-rotate-y" type="button">ROT Y</button>
+                    <select id="select-shading">
+                        <option value="phong">Phong</option>
+                        <option value="reflective">Reflective</option>
+                        <option value="refractive">Refractive</option>
+                    </select>
+                    <button id="btn-set-shading" type="button">Set</button>
+                </div>
+                <div id="control-wrapper">
+                    <span>
+                        <label>Width (px)</label>
+                        <input id="input-width" type="text" value="1280" />
+                    </span>
+                    <span>
+                        <label>Height (px)</label>
+                        <input id="input-height" type="text" value="720" />
+                    </span>
+                </div>
+            </div>
+        </div>
+        <div class="grid">
+            <div id="loading-message" class="loading">Loading cube map images...</div>
+            <canvas id="teapot"></canvas>
+        </div>
+        <div class="grid">
+            <button type="button" id="btn-screenshot">Screenshot</button>
+        </div>
+        <div class="grid">
+            <div class="col-9">
+                Roger Ngo, <a href="mailto:rngo2@illinois.edu">rngo2@illinois.edu</a>,
+                <a href="mailto:urbanspr1nter@gmail.com">urbanspr1nter@gmail.com</a>
+                <p>
+                    <a href="http://rogerngo.com">Homepage</a>
+                </p>
+            </div>
+        </div>
+        <script src="app.js"></script>
+    </body>
+</html>
